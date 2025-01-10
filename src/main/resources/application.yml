@@ -1,0 +1,64 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    accept-count: 200
+    max-connections: 2000
+    connection-timeout: 10s
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+  port: 8080
+  ssl:
+    enabled: false
+jwt:
+  secret: "dsdlkfjkadfd123!"
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+  datasource:
+    hikari:
+      jdbc-url: jdbc:mariadb://localhost:3306/erp?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+      username: root
+      password: "@Akdlsjtm96"
+#      jdbc-url: jdbc:mariadb://localhost:3307/erp?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+#      username: root
+#      password: changeme
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: vlrmakdhkd
+    password: dgfwflztrihlfoup
+    properties:
+      mail:
+        smtp:
+          auth: true
+          timeout: 5000
+          starttls:
+            enable: true
+      auth-code-expiration-millis: 1800000
+
+logging:
+  level:
+    org:
+      springframework:
+        messaging: DEBUG
+        web:
+          socket: DEBUG
+    root: INFO
+    v1.erpback: DEBUG
+  file:
+    path: ./logs
+    name: app-prod-%d{yyyy-MM-dd.log}
+  logback:
+    rolling policy:
+      max-file-size: 1GB
+      max-history: 4
+file:
+  upload-dir: "C:/Users/vlrma/boardfile/test/"
+#  upload-dir: "C:/Users/vlrma/boardfile/test/"
